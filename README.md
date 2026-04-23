@@ -65,7 +65,13 @@ git --version
 > **Screenshot 1:** Take a screenshot of your terminal showing all three
 > successful version checks and insert it here.
 >
-> `[insert screenshot]`
+> <img width="407" height="274" alt="1" src="https://github.com/user-attachments/assets/3c4569be-4dfc-45ae-9a9a-487c5936d3f1" />
+>
+> <img width="509" height="47" alt="2" src="https://github.com/user-attachments/assets/031c6dd7-366b-41b4-a5c7-9c250ccfd768" />
+>
+> <img width="221" height="31" alt="3" src="https://github.com/user-attachments/assets/dd5c50f0-55ce-4f0d-8e13-4aaaf7c7e118" />
+
+
 
 ---
 
