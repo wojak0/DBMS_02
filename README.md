@@ -624,14 +624,14 @@ Once the workflow has completed, navigate to **Releases** in the right sidebar.
 Which takes longer, and by approximately what factor? What does this suggest
 about where optimisation effort should be directed?
 
-> *Your answer:*
+>"Install" is roughly 15–20 times slower than "Render." Optimization should focus on caching dependencies or using a pre-built Docker image to eliminate the installation wait time.
 
 **Question 6.2:** Download `schema.svg` from the Release page and compare it
 to the `schema.svg` you rendered locally with `plantuml -tsvg schema.puml`.
 Are they identical? What does this tell you about the reproducibility of the
 build process?
 
-> *Your answer:*
+> The files are identical. This proves the build is reproducible, meaning the CI environment consistently generates the same professional output as the local environment.
 
 ---
 
@@ -645,7 +645,7 @@ your schema. What would be different if you had stored the diagram as a
 `.drawio` file or a PNG instead of a `.puml` file? What information would you
 lose?
 
-> *Your answer:*
+> Storing PNGs or .drawio files as binary blobs would hide specific changes. I would lose the ability to see line-by-line diffs, making it impossible to track exactly when an entity or relationship was modified.
 
 **Question B – Collaboration:**
 Imagine two people editing `schema.puml` simultaneously on separate branches –
@@ -653,14 +653,14 @@ one adds a `Genre` entity, the other corrects a cardinality. When they merge,
 Git can show a textual diff of the conflict. Would this be possible with a
 binary diagram file? What practical consequence does this have for a team?
 
-> *Your answer:*
+> Nope. Binary files cannot be merged or diffed by Git. In a team, this leads to merge conflicts that require manual overwriting, whereas .puml allows team members to work on the same diagram simultaneously.
 
 **Question C – Tag vs. branch for releases:**
 You tagged a specific commit as `v1.0.0` rather than pushing to a branch called
 `release`. What guarantee does an annotated tag offer that a branch cannot?
 Under what circumstance would someone want to use a branch instead?
 
-> *Your answer:*
+> An annotated tag is an immutable snapshot that never moves, providing a permanent reference for a version. A branch is used instead only if you need to continue adding bug fixes to a specific release path (LTS).
 
 **Question D – The value of CI for documentation:**
 Before this exercise, updating a diagram meant: edit the source, export an
@@ -668,7 +668,7 @@ image, commit the image, hope the export matched the source. Describe in two
 sentences what the CI pipeline eliminates, and what new guarantee it provides
 instead.
 
-> *Your answer:*
+> The CI pipeline eliminates manual export errors and the risk of diagrams becoming outdated. It provides a guarantee that the published documentation is always a 100% accurate reflection of the current source code.
 
 > **Screenshot 6:** Take a screenshot of your terminal showing
 > `git log --oneline` with all commits from this exercise visible, then open
