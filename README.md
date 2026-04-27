@@ -409,7 +409,9 @@ git tag
 > **Screenshot 3:** Take a screenshot of `git log --oneline -5` showing your
 > commits in order, and insert it here.
 >
-> `[insert screenshot]`
+> <img width="1639" height="333" alt="image" src="https://github.com/user-attachments/assets/962f2fd9-21f2-4c51-82af-bd86ecf349ef" />
+
+
 
 > **Caveat:** Tags are not pushed automatically with `git push origin main`.
 > You must push them explicitly. Forgetting this step means the workflow never
@@ -420,12 +422,12 @@ git tag
 **Question 4.1:** Run `git push origin main`. Then open the **Actions** tab in
 your fork on GitHub. Did any workflow run trigger? Explain why or why not.
 
-> *Your answer:*
+> Nope, it did not. The workflow is configured with a specific trigger: on: push: tags: ['v*']. This means GitHub only wakes up the "robot" when a tag starting with "v" is pushed. A standard push to the main/master branch is a different event that the workflow is specifically set to ignore.
 
 **Question 4.2:** Run `git tag -v v1.0.0`. What information is shown that
 `git tag` alone does not display? What does the `-v` flag verify?
 
-> *Your answer:*
+> It displays the metadata that a plain git tag hides, including the tagger’s name, email, date, and the annotation message. The -v flag stands for verify; it checks for a GPG signature to prove the tag's authenticity and ensure it hasn't been tampered with since creation.
 
 ---
 
@@ -568,14 +570,14 @@ git commit -m "ci: render PlantUML schema and publish GitHub Release on tag"
 if you replaced it with `on: push: branches: ['main']`? Would the release
 workflow still make sense? Why or why not?
 
-> *Your answer:*
+> Switching the trigger to main would result in a formal release being created for every single commit, including minor typos or half-finished work. This clutters the version history. By using tags (like v1.0.0), we ensure that a release only happens when we’ve reached a deliberate, stable milestone.
 
 **Question 5.2:** The step `apt-get install plantuml` takes roughly 20–30 seconds
 on every run. In a larger team with many releases per day, this adds up. Name
 one GitHub Actions mechanism that could eliminate this installation time on
 repeated runs.
 
-> *Your answer:*
+> You can use GitHub Actions Caching (actions/cache). This mechanism stores the installed dependencies after the first run and simply "restores" them for future runs. This skips the download and installation steps entirely, saving significant time in a high-frequency development environment.
 
 ---
 
