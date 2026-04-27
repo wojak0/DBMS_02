@@ -76,6 +76,8 @@ git --version
 > <img width="221" height="31" alt="3" src="https://github.com/user-attachments/assets/dd5c50f0-55ce-4f0d-8e13-4aaaf7c7e118" />
 
 
+<img width="443" height="147" alt="4_zid_3al_0" src="https://github.com/user-attachments/assets/aa1f9941-0b90-4e73-9c46-32222e62b402" />
+
 
 ---
 
@@ -226,21 +228,20 @@ git commit -m "feat: complete ER schema for library management"
 ellipses). PlantUML uses Crow's Foot notation. Describe one concrete difference
 in how an N:M relationship is represented in each notation.
 
-> *Your answer:*
+> The biggest difference is that Chen notation uses a separate diamond box to represent the relationship itself. Crow's Foot notation (what PlantUML uses) gets rid of the box and just puts multiplicity symbols (like the "three-pronged foot") directly on the ends of the lines.
 
 **Question 2.2:** What would happen if you wrote `@startuml Library` instead of
 `@startuml` at the top of `schema.puml`? Try it locally (`plantuml -tsvg schema.puml`)
 and observe the output filename. Why would this break the workflow?
 
-> *Your answer:*
+> Instead of schema.svg, the file would be named Library.svg. Since our GitHub Actions script and .gitignore are specifically looking for the name "schema," the whole automated pipeline would break because it wouldn't find the right file.
 
 **Question 2.3:** The `Author`–`Book` relationship is N:M. Does your PlantUML
 diagram require you to model the intermediate join table explicitly, or does
 PlantUML abstract it away? At which stage of the design process would the join
 table appear?
 
-> *Your answer:*
-
+> You don't need to model it explicitly in PlantUML; the language abstracts the N:M connection away. That intermediate join table is something you only deal with later on during the physical design phase when you're actually creating the database tables in SQL.
 ---
 
 ## Excursus: Docs as Code – Why text-based diagrams?
@@ -334,13 +335,13 @@ git commit -m "chore: ignore generated SVG artifact"
 Name one shell command you could use to check the exit code of the last command
 and verify that the render succeeded, without opening the SVG file.
 
-> *Your answer:*
+> You can run the command echo $?. If the output is 0, it confirms the PlantUML command finished successfully
 
 **Question 3.2:** Delete `schema.svg` and run `plantuml -tsvg schema.puml` again.
 Then run `git status`. Is `schema.svg` shown as an untracked file? Explain why
-or why not.
+or why not
 
-> *Your answer:*
+> Nope, because we added schema.svg to the .gitignore file, Git is instructed to completely ignore it, so it won't show up as an untracked file in git status
 
 ---
 
