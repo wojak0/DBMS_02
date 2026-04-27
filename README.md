@@ -76,9 +76,6 @@ git --version
 > <img width="221" height="31" alt="3" src="https://github.com/user-attachments/assets/dd5c50f0-55ce-4f0d-8e13-4aaaf7c7e118" />
 
 
-<img width="443" height="147" alt="4_zid_3al_0" src="https://github.com/user-attachments/assets/aa1f9941-0b90-4e73-9c46-32222e62b402" />
-
-
 ---
 
 ## 0 – Fork and Clone the Repository
@@ -101,6 +98,8 @@ ls
 > You should see three entries: `README.md`, `assets/`, and `schema.puml`.
 > The repository already contains the entity definitions. Your tasks are to
 > complete the schema, render it locally, and set up the release pipeline.
+
+<img width="443" height="147" alt="4_zid_3al_0" src="https://github.com/user-attachments/assets/b84a3990-c1b9-48cc-b478-b99e4ebdd493" />
 
 ---
 
@@ -307,7 +306,8 @@ Open `schema.svg` in a browser or SVG viewer.
 > **Screenshot 2:** Take a screenshot of `schema.svg` open in your browser,
 > showing all five entities and all four relationships, and insert it here.
 >
-> `[insert screenshot]`
+> <img width="355" height="457" alt="6" src="https://github.com/user-attachments/assets/8b4a2d7a-1604-4233-bc90-4e31a4fc50b9" />
+
 
 Once the diagram looks correct, tell Git to ignore the generated artifact.
 The workflow will recreate it on every release:
