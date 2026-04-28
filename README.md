@@ -603,7 +603,8 @@ Open your fork on GitHub and navigate to the **Actions** tab.
 > **Screenshot 4:** Take a screenshot of the completed GitHub Actions run
 > showing all four steps with green checkmarks, and insert it here.
 >
-> `[insert screenshot]`
+><img width="1920" height="1080" alt="Screenshot (449)" src="https://github.com/user-attachments/assets/f8517773-e933-44b8-9d84-b126779d4b57" />
+
 
 Once the workflow has completed, navigate to **Releases** in the right sidebar.
 
@@ -615,7 +616,8 @@ Once the workflow has completed, navigate to **Releases** in the right sidebar.
 > release title, the release notes, and the `schema.svg` download link, and
 > insert it here.
 >
-> `[insert screenshot]`
+> <img width="1920" height="1080" alt="Screenshot (450)" src="https://github.com/user-attachments/assets/79215d0c-4882-49d7-8b54-4fe314c90132" />
+
 
 ### Questions for Task 6
 
@@ -675,7 +677,8 @@ instead.
 > `schema.svg` from the Release in the same browser window alongside it.
 > Capture both in one screenshot and insert it here.
 >
-> `[insert screenshot]`
+> <img width="1920" height="1080" alt="Screenshot (451)" src="https://github.com/user-attachments/assets/2fe06403-e364-4c45-9f3b-7c993cae6f5d" />
+
 
 ---
 
